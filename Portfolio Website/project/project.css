@@ -1,0 +1,87 @@
+.navLink:nth-of-type(3),
+.navLink:hover {
+    color: #a8c7fa;
+    backdrop-filter: brightness(120%);
+}
+.heading {
+    opacity: 0;
+    text-align: center;
+    padding: 5vmax;
+    padding-bottom: 0;
+    margin: 0;
+    font-size: 6vmax;
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: normal;
+    animation-name: fadeinHeading;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeinHeading {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.content div {
+    opacity: 0;
+    border: solid #a8c7fa;
+    width: 60vw;
+    padding: 5vmax;
+    border-radius: 3vmax;
+    margin: 5vmax auto;
+    background: rgba(0, 80, 150, 0.5);
+    animation-name: fadeinContent;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeinContent {
+    100% {
+        opacity: 1;
+    }
+}
+h2 {
+    font-size: 5vmax;
+    margin-top: 0;
+    margin: 0;
+    padding-bottom: 4vmax;
+    border-bottom: #f8f8f8 solid 0.1px;
+    font-weight: normal;
+}
+h3 {
+    font-size: 3vmax;
+    padding-top: 4vmax;
+    padding-bottom: 1vmax;
+    margin: 0;
+    font-weight: normal;
+}
+p {
+    padding-top: 4vmax;
+    font-size: 2.5vmax;
+    margin: 0;
+}
+ul[class^="libUsed-"] {
+    font-size: 2.5vmax;
+    margin: 0;
+    padding-bottom: 4vmax;
+}
+button {
+    background: rgba(75, 85, 99, 0.6);
+    color: #f8f8f8;
+    width: 100%;
+    border-style: none;
+    border: solid #f8f8f8;
+    border-radius: 5vmax;
+    font-size: 2.5vmax;
+    padding: 1vmax;
+}
+button:hover {
+    transition: all 0.3s ease 0s;
+    color: black;
+    background: #f8f8f8;
+}
+img {
+    width: 10vmax;
+}

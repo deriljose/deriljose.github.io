@@ -1,0 +1,103 @@
+.navLink:nth-of-type(4),
+.navLink:hover {
+    color: #a8c7fa;
+    backdrop-filter: brightness(120%);
+}
+.heading {
+    opacity: 0;
+    text-align: center;
+    font-size: 6vmax;
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: normal;
+    padding: 5vmax;
+    margin: 0;
+}
+.heading:nth-of-type(1) {
+    animation-name: fadeinHeadingSocials;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeinHeadingSocials {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.content {
+    text-align: center;
+}
+#linkedin_btn,
+#github_btn,
+#whatsapp_btn,
+#gmail_btn {
+    opacity: 0;
+    border: solid #a8c7fa;
+    background: rgba(0, 80, 150, 0.4);
+    border-radius: 5vmax;
+    margin: 5vmax 3vmax;
+    margin-top: 0;
+    align-items: center;
+    display: inline-flex;
+    font-size: 4.5vmax;
+    color: #f8f8f8;
+    width: 38vmax;
+    height: 15vmax;
+    padding: 3vmax;
+}
+button i {
+    padding-right: 4vmax;
+}
+#linkedin_btn,
+#github_btn {
+    animation-name: fadeinButtonSocials;
+    animation-duration: 1.5s;
+    animation-delay: 1.25s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeinButtonSocials {
+    100% {
+        opacity: 1;
+    }
+}
+#linkedin_btn:hover,
+#github_btn:hover,
+#whatsapp_btn:hover,
+#gmail_btn:hover {
+    transition: all 0.3s ease 0s;
+    border: solid white;
+    background: white;
+    color: black;
+}
+.heading:nth-of-type(2) {
+    animation-name: fadeinHeadingContact;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.75s;
+}
+@keyframes fadeinHeadingContact {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#whatsapp_btn,
+#gmail_btn {
+    animation-name: fadeinButtonContact;
+    animation-duration: 1.5s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeinButtonContact {
+    100% {
+        opacity: 1;
+    }
+}
+.socialLogo {
+    width: 100%;
+}

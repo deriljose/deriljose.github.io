@@ -1,0 +1,54 @@
+.navLink:nth-of-type(2),
+.navLink:hover {
+    color: #a8c7fa;
+    backdrop-filter: brightness(120%);
+}
+.heading {
+    opacity: 0;
+    text-align: center;
+    font-size: 6vmax;
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: normal;
+    padding: 5vmax;
+    margin: 0;
+    animation-name: fadeinHeading;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeinHeading {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+p,
+#prog_lang {
+    opacity: 0;
+    text-align: center;
+    font-size: 3vmax;
+    line-height: 5vmax;
+    margin: auto 5vmax;
+    word-wrap: break-word;
+    animation-name: fadeinContent;
+    animation-duration: 1.5s;
+    animation-delay: 1.25s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeinContent {
+    100% {
+        opacity: 1;
+    }
+}
+#prog_lang {
+    columns: 300px 2;
+    margin: 0 auto;
+    width: 45%;
+}
+.lang {
+    padding: 2vmax 0;
+    font-size: 3.5vmax;
+    text-align: left;
+}

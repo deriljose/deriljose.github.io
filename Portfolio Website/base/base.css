@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap");
+body {
+    color: #f8f8f8;
+    margin: 0%;
+    font-family: "Open Sans";
+    background: rgb(55, 55, 55);
+    background: linear-gradient(
+        225deg,
+        rgba(55, 55, 55, 1) 0%,
+        rgba(15, 15, 15, 1) 100%
+    );
+}
+#navigation {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    font-size: 3vmin;
+    font-family: "Roboto", sans-serif;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+    backdrop-filter: blur(3px);
+    background: rgb(150, 0, 150);
+    background: -moz-linear-gradient(
+        90deg,
+        rgba(150, 0, 150, 0.9) 0%,
+        rgba(0, 80, 150, 0.9) 100%
+    );
+    background: -webkit-linear-gradient(
+        90deg,
+        rgba(150, 0, 150, 0.9) 0%,
+        rgba(0, 80, 150, 0.9) 100%
+    );
+    background: linear-gradient(
+        90deg,
+        rgba(150, 0, 150, 0.9) 0%,
+        rgba(0, 80, 150, 0.9) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#960096",endColorstr="#005096",GradientType=1);
+}
+#navlist {
+    list-style: none;
+    padding: 0%;
+    width: 100%;
+    text-align: right;
+    margin: 1.5vmax 0;
+}
+#navlist li {
+    display: inline-block;
+    padding: 0%;
+    padding-right: 3%;
+}
+#navlist li a {
+    transition: all 0.2s ease 0s;
+    color: #f8f8f8;
+    text-decoration: none;
+    padding-bottom: 1.5vmax;
+}
+#navlist li a:hover {
+    color: #a8c7fa;
+    border-bottom: solid #a8c7fa;
+}
+#here {
+    color: #a8c7fa !important;
+    border-bottom: solid #a8c7fa;
+}
+.logo {
+    padding: 0 3%;
+    width: 3.5vmax;
+}
