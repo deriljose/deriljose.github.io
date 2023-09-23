@@ -1,7 +1,7 @@
 
 # Portfolio Website 
 
-My first portfolio website is made using HTML, CSS and JavaSript.
+This is my first portfolio website made using HTML, CSS and JavaSript. It is Mobile-Friendly.
 
 Hosted using Github Pages.
 
