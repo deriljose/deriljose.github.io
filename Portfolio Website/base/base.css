@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap");
+head {
+    height: 100%;
+}
 body {
     color: #f8f8f8;
     margin: 0%;
