@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap");
-head {
+html {
     height: 100%;
 }
 body {
