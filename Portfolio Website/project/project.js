@@ -61,15 +61,3 @@ project(
     "#",
     "1.25s"
 );
-project(
-    "project-2",
-    "Portfolio Website",
-    "A Portfolio Website made with html ,css and javascript",
-    "libUsed-2",
-    "HTML",
-    "CSS",
-    "Javascript",
-    "githubButton-2",
-    "#",
-    "2.5s"
-);
