@@ -5,8 +5,8 @@ This is my first portfolio website made using HTML, CSS and JavaSript. It is Mob
 
 Hosted using Github Pages.
 
-[Link](https://deril-jose.github.io/portfolio-website-1/Portfolio%20Website/index/index.html)
+[Link](https://deriljose.github.io/portfolio-website-1/Portfolio%20Website/index/)
 
-![Logo](https://github.com/Deril-Jose/portfolio-website-1/blob/main/Portfolio%20Website/favicon_io/android-chrome-192x192.png?raw=true)
+![Logo](https://github.com/deriljose/portfolio-website-1/blob/main/Portfolio%20Website/favicon_io/android-chrome-192x192.png?raw=true)
 
 
