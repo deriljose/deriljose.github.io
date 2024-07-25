@@ -5,15 +5,10 @@ html {
     height: 100%;
 }
 body {
-    color: #f8f8f8;
+    color: #eaeaea;
     margin: 0%;
     font-family: "Open Sans";
-    background: rgb(55, 55, 55);
-    background: linear-gradient(
-        225deg,
-        rgba(55, 55, 55, 1) 0%,
-        rgba(15, 15, 15, 1) 100%
-    );
+    background: linear-gradient(to bottom, #161229, #100d20);
     height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -31,24 +26,13 @@ body {
     top: 0;
     position: sticky;
     z-index: 1;
-    backdrop-filter: blur(3px);
-    background: rgb(150, 0, 150);
-    background: -moz-linear-gradient(
-        90deg,
-        rgba(150, 0, 150, 0.9) 0%,
-        rgba(0, 80, 150, 0.9) 100%
-    );
-    background: -webkit-linear-gradient(
-        90deg,
-        rgba(150, 0, 150, 0.9) 0%,
-        rgba(0, 80, 150, 0.9) 100%
-    );
     background: linear-gradient(
-        90deg,
-        rgba(150, 0, 150, 0.9) 0%,
-        rgba(0, 80, 150, 0.9) 100%
+        270deg,
+        hsla(237, 90%, 11%, 1) 0%,
+        hsla(282, 84%, 18%, 1) 33%,
+        hsla(316, 93%, 23%, 1) 66%,
+        hsla(319, 87%, 30%, 1) 100%
     );
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#960096",endColorstr="#005096",GradientType=1);
 }
 #navlist {
     list-style: none;
@@ -64,7 +48,7 @@ body {
 }
 #navlist li a {
     transition: all 0.2s ease 0s;
-    color: #f8f8f8;
+    color: #eaeaea;
     text-decoration: none;
     padding-bottom: 1.5vmax;
 }

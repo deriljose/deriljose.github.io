@@ -3,61 +3,113 @@ function project(
     projectName,
     projectDesc,
     libListID,
-    libUsed1,
-    libUsed2,
-    libUsed3,
+    libraries,
     githubButtonClass,
     link,
     aniDelay
 ) {
     const container = document.createElement("div");
-    container.setAttribute("class", containerID);
+    container.setAttribute("id", containerID);
+    container.setAttribute("class", "project_tiles");
     document.getElementsByClassName("content")[0].appendChild(container);
+
     const name = document.createElement("h2");
     name.innerHTML = projectName;
-    document.getElementsByClassName(containerID)[0].appendChild(name);
+    container.appendChild(name);
+
     const desc = document.createElement("p");
     desc.innerHTML = projectDesc;
-    document.getElementsByClassName(containerID)[0].appendChild(desc);
+    container.appendChild(desc);
+
     const lib = document.createElement("h3");
-    lib.innerHTML = "Libraries Used :";
-    document.getElementsByClassName(containerID)[0].appendChild(lib);
+    lib.innerHTML = "Tools Utilized:";
+    container.appendChild(lib);
+
     const libList = document.createElement("ul");
     libList.setAttribute("class", libListID);
-    document.getElementsByClassName(containerID)[0].appendChild(libList);
-    const libItem1 = document.createElement("li");
-    const libItem2 = document.createElement("li");
-    const libItem3 = document.createElement("li");
-    libItem1.innerHTML = libUsed1;
-    libItem2.innerHTML = libUsed2;
-    libItem3.innerHTML = libUsed3;
-    document.getElementsByClassName(libListID)[0].appendChild(libItem1);
-    document.getElementsByClassName(libListID)[0].appendChild(libItem2);
-    document.getElementsByClassName(libListID)[0].appendChild(libItem3);
+    container.appendChild(libList);
+
+    libraries.forEach((library) => {
+        const libItem = document.createElement("li");
+        libItem.innerHTML = library;
+        libList.appendChild(libItem);
+    });
+
     const linkButton = document.createElement("button");
     linkButton.setAttribute("class", githubButtonClass);
     linkButton.setAttribute(
         "onclick",
         "window.open(" + JSON.stringify(link) + ")"
     );
-    document.getElementsByClassName(containerID)[0].appendChild(linkButton);
+    container.appendChild(linkButton);
+
     let githubLogo = document.createElement("img");
     githubLogo.setAttribute("src", "../social/social_logo/github_logo.png");
-    document
-        .getElementsByClassName(githubButtonClass)[0]
-        .appendChild(githubLogo);
-    document.getElementsByClassName(containerID)[0].style.animationDelay =
-        aniDelay;
+    linkButton.appendChild(githubLogo);
+
+    container.style.animationDelay = aniDelay;
 }
+
 project(
-    "project-1",
+    "project1",
     "Portfolio Website",
     "My Portfolio Website made with HTML ,CSS and Javascript",
     "libUsed-1",
-    "HTML",
-    "CSS",
-    "Javascript",
+    ["HTML", "CSS", "Javascript"],
     "githubButton-1",
-    "#",
+    "https://github.com/deriljose/portfolio-website-1",
     "1.25s"
 );
+
+project(
+    "project2",
+    "Data Analysis with Python (FreeCodeCamp)",
+    "All the projects I did for the Data Analysis with Python course",
+    "libUsed-2",
+    ["Python", "NumPy", "Pandas", "Seaborn", "Matplotlib"],
+    "githubButton-2",
+    "https://github.com/deriljose/data_analysis_projects",
+    "2.5s"
+);
+
+const projectTiles = document.getElementsByClassName("project_tiles");
+
+Array.from(projectTiles).forEach((projectTile) => {
+    const tileRect = projectTile.getBoundingClientRect();
+    let isHovering = false;
+
+    projectTile.addEventListener("mouseenter", handleMouseEnter);
+    projectTile.addEventListener("mousemove", handleMouseMove);
+    projectTile.addEventListener("mouseleave", handleMouseLeave);
+
+    function handleMouseEnter() {
+        isHovering = true;
+    }
+
+    function handleMouseMove(event) {
+        if (!isHovering) return;
+
+        const tileCenterX = tileRect.left + tileRect.width / 2;
+        const tileCenterY = tileRect.top + tileRect.height / 2;
+
+        const cursorX = event.clientX;
+        const cursorY = event.clientY;
+
+        const dx = cursorX - tileCenterX;
+        const dy = cursorY - tileCenterY;
+
+        const tiltFactor = 5;
+
+        const tiltX = -(dy / tileRect.height) * tiltFactor;
+        const tiltY = (dx / tileRect.width) * tiltFactor;
+
+        projectTile.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    }
+
+    function handleMouseLeave() {
+        isHovering = false;
+
+        projectTile.style.transition = "transform 1s ease-out";
+        projectTile.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+    }
+});

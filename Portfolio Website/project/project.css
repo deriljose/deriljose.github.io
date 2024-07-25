@@ -25,10 +25,10 @@
         transform: translateY(0);
     }
 }
-.content div {
+.project_tiles {
     opacity: 0;
     border: solid #a8c7fa;
-    width: 60vw;
+    width: 55vw;
     padding: 5vmax;
     border-radius: 3vmax;
     margin: 5vmax auto;
@@ -43,32 +43,33 @@
     }
 }
 h2 {
-    font-size: 5vmax;
+    font-size: 4vmax;
     margin-top: 0;
     margin: 0;
-    padding-bottom: 4vmax;
+    padding-bottom: 3vmax;
     border-bottom: #f8f8f8 solid 0.1px;
     font-weight: normal;
+    word-wrap: break-word;
 }
 h3 {
-    font-size: 3vmax;
-    padding-top: 4vmax;
+    font-size: 2.5vmax;
+    padding-top: 3vmax;
     padding-bottom: 1vmax;
     margin: 0;
     font-weight: normal;
 }
 p {
-    padding-top: 4vmax;
+    padding-top: 3vmax;
     font-size: 2.5vmax;
     margin: 0;
 }
 ul[class^="libUsed-"] {
-    font-size: 2.5vmax;
+    font-size: 2vmax;
     margin: 0;
-    padding-bottom: 4vmax;
+    padding-bottom: 3vmax;
 }
 button {
-    background: rgba(75, 85, 99, 0.6);
+    background: rgb(211, 211, 211, 0.5);
     color: #f8f8f8;
     width: 100%;
     border-style: none;
@@ -76,6 +77,11 @@ button {
     border-radius: 5vmax;
     font-size: 2.5vmax;
     padding: 1vmax;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
 }
 button:hover {
     transition: all 0.3s ease 0s;
