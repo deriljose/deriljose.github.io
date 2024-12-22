@@ -25,15 +25,16 @@
     border: none;
     color: #a8c7fa;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
     height: inherit;
     padding: 1vmax;
     left: 0;
     top: 0;
 }
 .portraitLogo {
-    padding-right: 2vmax;
+    margin-right: 2vmax;
     width: 3.5vmax;
+    border-radius: 15%;
 }
 .name {
     margin: 0;
@@ -53,9 +54,7 @@
     transform: translateX(-250px);
     transition: transform 0.3s;
 }
-i {
-    padding-right: 15px;
-}
+
 .navOpen .navLinks {
     transform: translateX(0);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -90,4 +89,8 @@ i {
     -ms-transition: all 500ms ease;
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
+}
+
+.navLink i {
+    margin-right: 1vmax;
 }

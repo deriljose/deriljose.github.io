@@ -6,10 +6,9 @@
 .heading {
     opacity: 0;
     text-align: center;
-    padding: 5vmax;
-    padding-bottom: 0;
+    padding: 3vmax;
     margin: 0;
-    font-size: 6vmax;
+    font-size: 4vmax;
     font-family: "Delius Swash Caps", cursive;
     font-weight: normal;
     animation-name: fadeinHeading;
@@ -25,48 +24,84 @@
         transform: translateY(0);
     }
 }
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vw 0;
+    padding: 1vw;
+    align-items: flex-start;
+}
+
 .project_tiles {
     opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 35%;
+    padding: 4vmax;
     border: solid #a8c7fa;
-    width: 55vw;
-    padding: 5vmax;
     border-radius: 3vmax;
-    margin: 5vmax auto;
+    margin: 0 auto;
     background: rgba(0, 80, 150, 0.5);
     animation-name: fadeinContent;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
 }
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    .project_tiles {
+        width: 60%;
+    }
+}
+
+@keyframes fadeinContent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes fadeinContent {
     100% {
         opacity: 1;
     }
 }
 h2 {
-    font-size: 4vmax;
+    font-size: 3vmax;
     margin-top: 0;
     margin: 0;
-    padding-bottom: 3vmax;
+    width: 100%;
+    padding-bottom: 2vmax;
     border-bottom: #f8f8f8 solid 0.1px;
     font-weight: normal;
     word-wrap: break-word;
 }
 h3 {
-    font-size: 2.5vmax;
-    padding-top: 3vmax;
+    font-size: 1.5vmax;
+    padding-top: 2vmax;
     padding-bottom: 1vmax;
     margin: 0;
     font-weight: normal;
 }
 p {
-    padding-top: 3vmax;
-    font-size: 2.5vmax;
+    padding-top: 2vmax;
+    font-size: 1.5vmax;
     margin: 0;
 }
 ul[class^="libUsed-"] {
-    font-size: 2vmax;
+    font-size: 1vmax;
     margin: 0;
-    padding-bottom: 3vmax;
+    padding-bottom: 2vmax;
 }
 button {
     background: rgb(211, 211, 211, 0.5);
@@ -75,7 +110,6 @@ button {
     border-style: none;
     border: solid #f8f8f8;
     border-radius: 5vmax;
-    font-size: 2.5vmax;
     padding: 1vmax;
     -webkit-transition: all 500ms ease;
     -moz-transition: all 500ms ease;
@@ -89,5 +123,5 @@ button:hover {
     background: #f8f8f8;
 }
 img {
-    width: 10vmax;
+    width: 8vmax;
 }

@@ -6,10 +6,10 @@
 .heading {
     opacity: 0;
     text-align: center;
-    font-size: 6vmax;
+    font-size: 4vmax;
     font-family: "Delius Swash Caps", cursive;
     font-weight: normal;
-    padding: 5vmax;
+    padding: 3vmax;
     margin: 0;
     animation-name: fadeinHeading;
     animation-duration: 1.5s;
@@ -28,9 +28,9 @@ p,
 #prog_lang {
     opacity: 0;
     text-align: center;
-    font-size: 3vmax;
-    line-height: 5vmax;
-    margin: auto 5vmax;
+    font-size: 2vmax;
+    line-height: 3vmax;
+    margin: auto 10vw;
     word-wrap: break-word;
     animation-name: fadeinContent;
     animation-duration: 1.5s;
@@ -46,9 +46,14 @@ p,
     columns: 300px 2;
     margin: 0 auto;
     width: 45%;
+    background: rgba(0, 80, 150, 0.5);
+    border: solid #a8c7fa;
+    border-radius: 5vmax;
+    padding: 2vmax 4vmax;
 }
 .lang {
-    padding: 2vmax 0;
-    font-size: 3.5vmax;
+    padding: 1vmax 0;
+    font-size: 2.5vmax;
     text-align: left;
+    width: fit-content;
 }

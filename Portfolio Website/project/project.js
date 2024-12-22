@@ -69,47 +69,64 @@ project(
     ["Python", "NumPy", "Pandas", "Seaborn", "Matplotlib"],
     "githubButton-2",
     "https://github.com/deriljose/data_analysis_projects",
-    "2.5s"
+    "1.75s"
 );
 
-const projectTiles = document.getElementsByClassName("project_tiles");
+const projectTiles = document.querySelectorAll(".project_tiles");
 
-Array.from(projectTiles).forEach((projectTile) => {
-    const tileRect = projectTile.getBoundingClientRect();
-    let isHovering = false;
+projectTiles.forEach((projectTile) => {
+    projectTile.addEventListener("mousemove", (e) => {
+        const { left, top, width, height } =
+            projectTile.getBoundingClientRect();
+        const mouseX = e.clientX - left;
+        const mouseY = e.clientY - top;
 
-    projectTile.addEventListener("mouseenter", handleMouseEnter);
-    projectTile.addEventListener("mousemove", handleMouseMove);
-    projectTile.addEventListener("mouseleave", handleMouseLeave);
+        const centerX = width / 2;
+        const centerY = height / 2;
 
-    function handleMouseEnter() {
-        isHovering = true;
-    }
+        const tiltY = (mouseX - centerX) / centerX;
 
-    function handleMouseMove(event) {
-        if (!isHovering) return;
+        let tiltX = (mouseY - centerY) / centerY;
 
-        const tileCenterX = tileRect.left + tileRect.width / 2;
-        const tileCenterY = tileRect.top + tileRect.height / 2;
+        if (tiltX < 0) {
+            tiltX = tiltX * -1;
+        }
 
-        const cursorX = event.clientX;
-        const cursorY = event.clientY;
+        projectTile.style.transform = `rotateX(${tiltX * 7}deg) rotateY(${
+            tiltY * 7
+        }deg)`;
+    });
 
-        const dx = cursorX - tileCenterX;
-        const dy = cursorY - tileCenterY;
-
-        const tiltFactor = 5;
-
-        const tiltX = -(dy / tileRect.height) * tiltFactor;
-        const tiltY = (dx / tileRect.width) * tiltFactor;
-
-        projectTile.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-    }
-
-    function handleMouseLeave() {
-        isHovering = false;
-
-        projectTile.style.transition = "transform 1s ease-out";
-        projectTile.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
-    }
+    projectTile.addEventListener("mouseleave", () => {
+        projectTile.style.transform = "rotateX(0deg) rotateY(0deg)";
+    });
 });
+if (window.innerWidth >= 768) {
+    const projectTiles2 = document.querySelectorAll(".project_tiles");
+
+    projectTiles2.forEach((tile, index) => {
+        if (index > 1) {
+            if (index % 2 == 0) {
+                const previousTile2 = projectTiles2[index - 2];
+                const previousTile = projectTiles2[index - 1];
+                const heightDifference = Math.abs(
+                    previousTile2.offsetHeight - previousTile.offsetHeight
+                );
+
+                if (previousTile.offsetHeight > previousTile2.offsetHeight) {
+                    tile.style.marginTop = `${heightDifference * -1}px`;
+                }
+            } else {
+                const previousTile2 = projectTiles2[index - 3];
+                const previousTile = projectTiles2[index - 2];
+                const heightDifference = Math.abs(
+                    previousTile2.offsetHeight - previousTile.offsetHeight
+                );
+
+                if (previousTile.offsetHeight < previousTile2.offsetHeight) {
+                    tile.style.marginTop = `${heightDifference * -1}px`;
+                }
+            }
+        }
+    });
+}

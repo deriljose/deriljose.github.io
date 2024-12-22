@@ -6,10 +6,10 @@
 .heading {
     opacity: 0;
     text-align: center;
-    font-size: 6vmax;
+    font-size: 4vmax;
     font-family: "Delius Swash Caps", cursive;
     font-weight: normal;
-    padding: 5vmax;
+    padding: 3vmax;
     margin: 0;
 }
 .heading:nth-of-type(1) {
@@ -29,6 +29,18 @@
 .content {
     text-align: center;
 }
+#linkedin_btn i,
+#github_btn i,
+#whatsapp_btn i,
+#gmail_btn i {
+    padding-right: 4vmax;
+    font-size: 6vmax !important;
+}
+
+button p {
+    margin: 0;
+}
+
 #linkedin_btn,
 #github_btn,
 #whatsapp_btn,
@@ -37,29 +49,29 @@
     border: solid #a8c7fa;
     background: rgba(0, 80, 150, 0.4);
     border-radius: 5vmax;
-    margin: 5vmax 3vmax;
+    margin: 4vmax 3vmax;
     margin-top: 0;
     align-items: center;
     display: inline-flex;
-    font-size: 4.5vmax;
+    font-size: 4vmax;
     color: #f8f8f8;
-    width: 38vmax;
-    height: 15vmax;
+    width: 35vmax;
+    height: auto;
     padding: 3vmax;
     -webkit-transition: all 500ms ease;
     -moz-transition: all 500ms ease;
     -ms-transition: all 500ms ease;
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
+    position: relative;
+    overflow: hidden;
 }
-button i {
-    padding-right: 4vmax;
-}
+
 #linkedin_btn,
 #github_btn {
     animation-name: fadeinButtonSocials;
     animation-duration: 1.5s;
-    animation-delay: 1.25s;
+    animation-delay: 0.75s;
     animation-fill-mode: forwards;
 }
 @keyframes fadeinButtonSocials {
@@ -67,20 +79,11 @@ button i {
         opacity: 1;
     }
 }
-#linkedin_btn:hover,
-#github_btn:hover,
-#whatsapp_btn:hover,
-#gmail_btn:hover {
-    transition: all 0.3s ease 0s;
-    border: solid white;
-    background: white;
-    color: black;
-}
 .heading:nth-of-type(2) {
     animation-name: fadeinHeadingContact;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
-    animation-delay: 2.75s;
+    animation-delay: 1.75s;
 }
 @keyframes fadeinHeadingContact {
     0% {
@@ -95,7 +98,7 @@ button i {
 #gmail_btn {
     animation-name: fadeinButtonContact;
     animation-duration: 1.5s;
-    animation-delay: 4s;
+    animation-delay: 2.5s;
     animation-fill-mode: forwards;
 }
 @keyframes fadeinButtonContact {
@@ -105,4 +108,18 @@ button i {
 }
 .socialLogo {
     width: 100%;
+}
+
+#linkedin_btn:hover,
+#github_btn:hover,
+#whatsapp_btn:hover,
+#gmail_btn:hover {
+    cursor: pointer;
+}
+
+#linkedin_btn,
+#github_btn,
+#whatsapp_btn,
+#gmail_btn {
+    transition: background-color 0.5s ease, transform 0.5s ease;
 }

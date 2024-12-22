@@ -21,7 +21,7 @@ body {
     justify-content: space-between;
     align-items: center;
     text-decoration: none;
-    font-size: 3vmin;
+    font-size: 1.25vw;
     font-family: "Roboto", sans-serif;
     top: 0;
     position: sticky;
@@ -39,7 +39,7 @@ body {
     padding: 0%;
     width: 100%;
     text-align: right;
-    margin: 1.5vmax 0;
+    margin: 1.25vmax 0;
 }
 #navlist li {
     display: inline-block;
@@ -50,7 +50,7 @@ body {
     transition: all 0.2s ease 0s;
     color: #eaeaea;
     text-decoration: none;
-    padding-bottom: 1.5vmax;
+    padding-bottom: 1.25vmax;
 }
 #navlist li a:hover {
     color: #a8c7fa;
@@ -61,6 +61,7 @@ body {
     border-bottom: solid #a8c7fa;
 }
 .logo {
-    padding: 0 3%;
-    width: 3.5vmax;
+    margin: 0 3%;
+    border-radius: 15%;
+    width: 3vw;
 }
