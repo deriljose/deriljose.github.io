@@ -44,7 +44,7 @@ function project(
     container.appendChild(linkButton);
 
     let githubLogo = document.createElement("img");
-    githubLogo.setAttribute("src", "github_logo.png");
+    githubLogo.setAttribute("src", "project/github_logo.png");
     linkButton.appendChild(githubLogo);
 
     container.style.animationDelay = aniDelay;
