@@ -1,0 +1,142 @@
+.navLink:nth-of-type(3),
+.navLink:hover {
+    color: #a8c7fa;
+    backdrop-filter: brightness(120%);
+}
+.heading {
+    opacity: 0;
+    text-align: center;
+    padding: 3vmax;
+    margin: 0;
+    font-size: 3vmax;
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: normal;
+    animation-name: fadeinHeading;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeinHeading {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10vmax;
+    gap: 5vw 0;
+    align-items: flex-start;
+}
+
+.project_tiles {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 35%;
+    padding: 3vmax;
+    border-radius: 1vmax;
+    margin: 0 auto;
+    background: rgba(0, 80, 150, 0.5);
+    animation-name: fadeinContent;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+}
+
+@keyframes fadeinContent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeinContent {
+    100% {
+        opacity: 1;
+    }
+}
+h2 {
+    font-size: 2vmax;
+    margin-top: 0;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 2vmax;
+    border-bottom: #f8f8f8 solid 0.1px;
+    font-weight: normal;
+    word-wrap: break-word;
+}
+h3 {
+    font-size: 1.3vmax;
+    padding-top: 2vmax;
+    padding-bottom: 1vmax;
+    margin: 0;
+    font-weight: normal;
+}
+p {
+    padding-top: 2vmax;
+    font-size: 1.3vmax;
+    margin: 0;
+}
+ul[class^="libUsed-"] {
+    font-size: 1vmax;
+    margin: 0;
+    padding-bottom: 2vmax;
+}
+button {
+    background: rgb(211, 211, 211, 0.5);
+    color: #f8f8f8;
+    width: 100%;
+    border-style: none;
+    border: solid #f8f8f8;
+    border-radius: 5vmax;
+    padding: 1vmax;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+button:hover {
+    transition: all 0.3s ease 0s;
+    color: black;
+    background: #f8f8f8;
+}
+img {
+    width: 5vmax;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 4vmax;
+    }
+    .content {
+        flex-direction: column;
+        padding: 0%;
+    }
+    .project_tiles {
+        width: 60%;
+    }
+    h2 {
+        font-size: 3vmax;
+    }
+    h3 {
+        font-size: 1.5vmax;
+    }
+    p {
+        font-size: 1.5vmax;
+    }
+    img {
+        width: 6vmax;
+    }
+}
