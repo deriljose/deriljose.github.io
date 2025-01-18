@@ -51,13 +51,23 @@
         </header>
         <script type="text/javascript" src="../base/portrait_base.js"></script>
         <div class="content">
-            <div id="info">
-                <img
-                    src="deril_jose_passport_photo.jpg"
-                    alt="a picture of me"
-                    id="photo"
-                />
-                <h1 id="name">Deril Jose Thirunilath</h1>
+            <div class="info-card" onclick="this.classList.toggle('flipped')">
+                <div class="info-card-inner">
+                    <div class="info-card-front">
+                        <img
+                            src="deril_jose_passport_photo.jpg"
+                            alt="a picture of me"
+                            id="photo"
+                        />
+                        <h1 id="name">Deril Jose<br />Thirunilath</h1>
+                    </div>
+                    <div class="info-card-back">
+                        <h1>
+                            "Talent can take you far, but<br />Hard Work can
+                            take you even further"
+                        </h1>
+                    </div>
+                </div>
             </div>
             <h1 class="heading">About Me</h1>
             <p>
@@ -67,5 +77,6 @@
             </p>
             <br />
         </div>
+        <script type="text/javascript" src="index.js"></script>
     </body>
 </html>

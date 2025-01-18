@@ -3,33 +3,61 @@
     color: #a8c7fa;
     backdrop-filter: brightness(120%);
 }
-#info {
-    background-image: url("background_pic.png");
-    background-size: cover;
-    border-bottom: 2px solid transparent;
-    border-image: linear-gradient(
-        270deg,
-        hsla(237, 90%, 11%, 1) 0%,
-        hsla(282, 84%, 18%, 1) 33%,
-        hsla(316, 93%, 23%, 1) 66%,
-        hsla(319, 87%, 30%, 1) 100%
-    );
 
-    border-image-slice: 1;
-    width: 100%;
-}
-#photo {
-    opacity: 0;
-    display: block;
-    margin: 0px auto;
-    padding: 5vw;
-    width: 20%;
-    border-radius: 1000px;
-    animation-name: fadeinPhoto;
+.info-card {
+    background-color: transparent;
+    width: 35%;
+    height: 15vmax;
+    margin: 3vmax auto;
+    margin-bottom: 0;
+    perspective: 1000px;
+    animation-name: fadeIn;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
 }
-@keyframes fadeinPhoto {
+
+.info-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.info-card.flipped .info-card-inner {
+    transform: rotateX(180deg);
+}
+
+.info-card-front,
+.info-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #434051;
+    border-radius: 1vmax;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.info-card-back {
+    transform: rotateX(180deg);
+    background: #434051;
+    border-radius: 1vmax;
+}
+
+#photo {
+    opacity: 0;
+    position: absolute;
+    width: 8vmax;
+    top: 3.5vmax;
+    left: 4vmax;
+    border-radius: 1000px;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
     0% {
         transform: translateY(-100px);
     }
@@ -38,37 +66,41 @@
         transform: translateY(0);
     }
 }
+
 #name {
     opacity: 0;
-    width: fit-content;
-    padding: 2vmax;
-    margin: 0px auto;
-    margin-bottom: 5vw;
-    background: black;
-    border-radius: 3vmax;
-    border: 1px solid #575a5f;
+    position: absolute;
+    top: 2vmax;
+    right: 4vmax;
+    margin: 0;
+    padding: 2vmax 0;
+    padding-left: 2.5vmax;
+    border-left: 2px solid gray;
     font-size: 2.5vmax;
-    animation-name: fadeinName;
+    animation-name: fadeIn;
     animation-duration: 1.5s;
-    animation-delay: 0.75s;
     animation-fill-mode: forwards;
 }
-@keyframes fadeinName {
-    100% {
-        opacity: 1;
-    }
+
+.info-card-back h1 {
+    text-align: center;
+    font-family: Playfair Display;
+    font-weight: 400;
+    font-size: 2vmax;
+    margin: 2vmax;
 }
+
 .heading {
     opacity: 0;
     text-align: center;
     padding: 3vmax;
     margin: 0;
-    font-size: 4vmax;
+    font-size: 3vmax;
     font-family: "Delius Swash Caps", cursive;
     font-weight: normal;
     animation-name: fadeinHeading;
     animation-duration: 1.5s;
-    animation-delay: 1.75s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 @keyframes fadeinHeading {
@@ -83,17 +115,50 @@
 p {
     opacity: 0;
     text-align: center;
-    margin: auto 7vmax;
-    font-size: 2.5vmax;
-    line-height: 4vmax;
+    margin: auto 20vw;
+    font-size: 2vmax;
+    line-height: 3vmax;
     word-wrap: break-word;
     animation-name: fadeinContent;
     animation-duration: 1.5s;
-    animation-delay: 2.5s;
+    animation-delay: 1.75s;
     animation-fill-mode: forwards;
 }
 @keyframes fadeinContent {
     100% {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .info-card {
+        width: 85%;
+        height: 18vmax;
+        margin: 3vmax auto;
+    }
+
+    #photo {
+        width: 10vmax;
+    }
+
+    #name {
+        top: 2.5vmax;
+        right: 4vmax;
+        padding: 2vmax 0;
+        padding-left: 5vw;
+        font-size: 3vmax;
+    }
+    .info-card-back h1 {
+        font-size: 2.5vmax;
+        margin: 2vmax;
+    }
+
+    .heading {
+        font-size: 4vmax;
+    }
+    p {
+        margin: auto 7vmax;
+        font-size: 2.5vmax;
+        line-height: 4vmax;
     }
 }

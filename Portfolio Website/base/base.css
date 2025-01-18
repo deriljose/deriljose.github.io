@@ -1,22 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 html {
     height: 100%;
 }
 body {
     color: #eaeaea;
-    margin: 0%;
+    margin: 0;
+    padding-bottom: 3vmax;
     font-family: "Open Sans";
     background: linear-gradient(to bottom, #161229, #100d20);
-    height: 100%;
+
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 #navigation {
     box-sizing: border-box;
-    padding: 0%;
-    margin: 0%;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;

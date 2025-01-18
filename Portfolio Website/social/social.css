@@ -6,7 +6,7 @@
 .heading {
     opacity: 0;
     text-align: center;
-    font-size: 4vmax;
+    font-size: 3vmax;
     font-family: "Delius Swash Caps", cursive;
     font-weight: normal;
     padding: 3vmax;
@@ -34,7 +34,7 @@
 #whatsapp_btn i,
 #gmail_btn i {
     padding-right: 4vmax;
-    font-size: 6vmax !important;
+    font-size: 5vmax !important;
 }
 
 button p {
@@ -46,24 +46,18 @@ button p {
 #whatsapp_btn,
 #gmail_btn {
     opacity: 0;
+    position: relative;
     border: solid #a8c7fa;
     background: rgba(0, 80, 150, 0.4);
-    border-radius: 5vmax;
-    margin: 4vmax 3vmax;
-    margin-top: 0;
+    border-radius: 3vmax;
+    margin: 0% 3vmax;
     align-items: center;
     display: inline-flex;
-    font-size: 4vmax;
+    font-size: 3vmax;
     color: #f8f8f8;
-    width: 35vmax;
+    width: 27vmax;
     height: auto;
-    padding: 3vmax;
-    -webkit-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    transition: all 500ms ease;
-    position: relative;
+    padding: 2vmax;
     overflow: hidden;
 }
 
@@ -83,7 +77,7 @@ button p {
     animation-name: fadeinHeadingContact;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
-    animation-delay: 1.75s;
+    animation-delay: 1.25s;
 }
 @keyframes fadeinHeadingContact {
     0% {
@@ -98,7 +92,7 @@ button p {
 #gmail_btn {
     animation-name: fadeinButtonContact;
     animation-duration: 1.5s;
-    animation-delay: 2.5s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
 }
 @keyframes fadeinButtonContact {
@@ -117,9 +111,18 @@ button p {
     cursor: pointer;
 }
 
-#linkedin_btn,
-#github_btn,
-#whatsapp_btn,
-#gmail_btn {
-    transition: background-color 0.5s ease, transform 0.5s ease;
+@media (max-width: 768px) {
+    #linkedin_btn,
+    #github_btn,
+    #whatsapp_btn,
+    #gmail_btn {
+        margin: 4vmax 3vmax;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 4vmax;
+    }
 }
