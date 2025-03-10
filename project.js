@@ -48,6 +48,17 @@ function project(
     linkButton.appendChild(githubLogo);
 
     container.style.animationDelay = aniDelay;
+
+    if (projectName === "Rajagiri Event Management System (REMS)") {
+        const remsButton = document.createElement("button");
+        remsButton.setAttribute("class", "websiteButton");
+        remsButton.setAttribute(
+            "onclick",
+            "window.open('https://rems.zapto.org')"
+        );
+        remsButton.innerHTML = "Visit REMS";
+        container.appendChild(remsButton);
+    }
 }
 
 project(
@@ -63,13 +74,24 @@ project(
 
 project(
     "project2",
+    "Rajagiri Event Management System (REMS)",
+    "A platform to manage events for students, teachers, and event organizers at Rajagiri.",
+    "libUsed-2",
+    ["HTML", "CSS", "NodeJS", "MySQL"],
+    "githubButton-2",
+    "https://github.com/deriljose/rems",
+    "1.75s"
+);
+
+project(
+    "project3",
     "Data Analysis with Python (FreeCodeCamp)",
     "All the projects I did for the Data Analysis with Python course",
-    "libUsed-2",
+    "libUsed-3",
     ["Python", "NumPy", "Pandas", "Seaborn", "Matplotlib"],
-    "githubButton-2",
+    "githubButton-3",
     "https://github.com/deriljose/data_analysis_projects",
-    "1.75s"
+    "2.25s"
 );
 
 const projectTiles = document.querySelectorAll(".project_tiles");
@@ -101,32 +123,68 @@ projectTiles.forEach((projectTile) => {
         projectTile.style.transform = "rotateX(0deg) rotateY(0deg)";
     });
 });
-if (window.innerWidth >= 768) {
-    const projectTiles2 = document.querySelectorAll(".project_tiles");
 
-    projectTiles2.forEach((tile, index) => {
-        if (index > 1) {
-            if (index % 2 == 0) {
-                const previousTile2 = projectTiles2[index - 2];
-                const previousTile = projectTiles2[index - 1];
-                const heightDifference = Math.abs(
-                    previousTile2.offsetHeight - previousTile.offsetHeight
-                );
+function getDistanceToBottom(container) {
+    const rect = container.getBoundingClientRect();
+    const containerTop = rect.top + window.scrollY;
+    const containerHeight = container.offsetHeight;
+    const distanceToBottom = containerTop + containerHeight;
+    return distanceToBottom;
+}
 
-                if (previousTile.offsetHeight > previousTile2.offsetHeight) {
-                    tile.style.marginTop = `${heightDifference * -1}px`;
+function setDynamicMargin() {
+    if (window.innerWidth >= 768) {
+        const projectTiles2 = document.querySelectorAll(".project_tiles");
+
+        projectTiles2.forEach((tile, index) => {
+            if (index > 1 && index % 2 == 0) {
+                let previousTileAbove = projectTiles2[index - 2];
+                let previousTileOtherAbove = projectTiles2[index - 1];
+
+                if (
+                    previousTileAbove.offsetHeight >
+                    previousTileOtherAbove.offsetHeight
+                ) {
+                    tile.style.marginTop = "3vw";
+                } else if (
+                    previousTileAbove.offsetHeight <
+                    previousTileOtherAbove.offsetHeight
+                ) {
+                    let heightDiff =
+                        getDistanceToBottom(previousTileOtherAbove) -
+                        getDistanceToBottom(previousTileAbove);
+                    let gap = (-heightDiff / window.innerWidth) * 100;
+                    tile.style.marginTop = `${gap + 3}vw`;
                 }
-            } else {
-                const previousTile2 = projectTiles2[index - 3];
-                const previousTile = projectTiles2[index - 2];
-                const heightDifference = Math.abs(
-                    previousTile2.offsetHeight - previousTile.offsetHeight
-                );
+            } else if (index > 1 && index % 2 != 0) {
+                let previousTileAbove = projectTiles2[index - 2];
+                let previousTileOtherAbove = projectTiles2[index - 3];
 
-                if (previousTile.offsetHeight < previousTile2.offsetHeight) {
-                    tile.style.marginTop = `${heightDifference * -1}px`;
+                if (
+                    previousTileAbove.offsetHeight >
+                    previousTileOtherAbove.offsetHeight
+                ) {
+                    tile.style.marginTop = "3vw";
+                } else if (
+                    previousTileAbove.offsetHeight <
+                    previousTileOtherAbove.offsetHeight
+                ) {
+                    let heightDiff =
+                        getDistanceToBottom(previousTileOtherAbove) -
+                        getDistanceToBottom(previousTileAbove);
+                    let gap = (-heightDiff / window.innerWidth) * 100;
+                    tile.style.marginTop = `${gap + 3}vw`;
                 }
             }
+        });
+    }
+}
+
+if (window.innerWidth >= 768) {
+    setDynamicMargin();
+    window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+            setDynamicMargin();
         }
     });
 }

@@ -1,6 +1,6 @@
 async function addPortriatNav() {
     try {
-        const resp = await fetch("../base/portrait_base.html");
+        const resp = await fetch("base/portrait_base.html");
         if (!resp.ok) {
             throw new Error(`HTTP error! Status: ${resp.status}`);
         }
