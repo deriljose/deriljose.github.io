@@ -51,6 +51,13 @@
     transform-style: preserve-3d;
 }
 
+.project_tiles .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1vmax; /* Add spacing between buttons */
+    width: 100%;
+}
+
 @keyframes fadeinContent {
     0% {
         opacity: 0;
@@ -76,26 +83,29 @@ h2 {
     word-wrap: break-word;
 }
 h3 {
-    padding-top: 2vmax;
+    padding-top: 1.5vmax;
     padding-bottom: 1vmax;
     margin: 0;
     font-weight: normal;
+    font-size: 1em;
 }
 p {
-    padding-top: 2vmax;
+    padding-top: 1.5vmax;
     margin: 0;
+    font-size: 1em;
 }
 ul[class^="libUsed-"] {
     margin: 0;
-    padding-bottom: 2vmax;
+    padding-bottom: 1.5vmax;
+    font-size: 1em;
 }
 
 button {
     background: rgb(211, 211, 211, 0.5);
     color: black;
-    width: 100%;
+    width: 20%;
     border-style: none;
-    border: solid #f8f8f8;
+    /*border: solid #f8f8f8;*/
     border-radius: 5vmax;
     padding: 0.5vmax;
     -webkit-transition: all 500ms ease;
@@ -104,23 +114,33 @@ button {
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
 }
+
 button:hover {
     transition: all 0.3s ease 0s;
     color: black;
     background: #f8f8f8;
 }
-img {
-    width: 4vmax;
-}
+
 .websiteButton {
     color: black;
-    margin-top: 2vmax;
     font-family: "Roboto", sans-serif;
     font-weight: 1000;
     font-size: 1.3vmax;
+    text-align: center;
 }
+
+.githubButton {
+    flex: 1; /* Ensure buttons take equal space */
+    text-align: center;
+}
+
+.githubButton img {
+    width: 4vmax;
+}
+
 .websiteButton img {
-    width: 1vmax;
+    width: 35%;
+    height: auto;
 }
 
 @media (max-width: 768px) {
@@ -134,7 +154,7 @@ img {
     .project_tiles {
         width: 60%;
         margin: auto;
-        margin-bottom: 3vw;
+        margin-bottom: 5vw;
     }
     h2 {
         font-size: 2vmax;

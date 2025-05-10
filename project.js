@@ -6,7 +6,8 @@ function project(
     libraries,
     githubButtonClass,
     link,
-    aniDelay
+    aniDelay,
+    websiteLink // New parameter for website link
 ) {
     const container = document.createElement("div");
     container.setAttribute("id", containerID);
@@ -35,13 +36,18 @@ function project(
         libList.appendChild(libItem);
     });
 
+    // Create a container for buttons
+    const buttonContainer = document.createElement("div");
+    buttonContainer.setAttribute("class", "button-container");
+    container.appendChild(buttonContainer);
+
     const linkButton = document.createElement("button");
-    linkButton.setAttribute("class", githubButtonClass);
+    linkButton.setAttribute("class", githubButtonClass + " githubButton");
     linkButton.setAttribute(
         "onclick",
         "window.open(" + JSON.stringify(link) + ")"
     );
-    container.appendChild(linkButton);
+    buttonContainer.appendChild(linkButton);
 
     let githubLogo = document.createElement("img");
     githubLogo.setAttribute("src", "project/github_logo.png");
@@ -49,27 +55,27 @@ function project(
 
     container.style.animationDelay = aniDelay;
 
-    if (projectName === "Rajagiri Event Management System (REMS)") {
-        const remsButton = document.createElement("button");
-        remsButton.setAttribute("class", "websiteButton");
-        remsButton.setAttribute(
-            "onclick",
-            "window.open('https://rems.zapto.org')"
-        );
-        remsButton.innerHTML = "Visit REMS";
-        container.appendChild(remsButton);
+    // Create a "Visit" button if websiteLink is not NULL
+    if (websiteLink) {
+        const visitButton = document.createElement("button");
+        visitButton.setAttribute("class", "websiteButton");
+        visitButton.setAttribute("onclick", `window.open('${websiteLink}')`);
+        visitButton.innerHTML =
+            '<img width="100" height="100" src="https://img.icons8.com/ios/100/internet--v1.png" alt="internet--v1"/>';
+        buttonContainer.appendChild(visitButton);
     }
 }
 
 project(
     "project1",
     "Portfolio Website",
-    "My Portfolio Website made with HTML ,CSS and Javascript",
+    "My Portfolio Website made with HTML ,CSS and Javascript.",
     "libUsed-1",
     ["HTML", "CSS", "Javascript"],
     "githubButton-1",
     "https://github.com/deriljose/portfolio-website-1",
-    "1.25s"
+    "1.25s",
+    null
 );
 
 project(
@@ -80,18 +86,44 @@ project(
     ["HTML", "CSS", "NodeJS", "MySQL"],
     "githubButton-2",
     "https://github.com/deriljose/rems",
-    "1.75s"
+    "1.6s",
+    "https://rems-9u27.onrender.com/"
 );
 
 project(
     "project3",
+    "PC Builder",
+    "A website that recommends PC parts based on user requirements using Gemini.",
+    "libUsed-3",
+    ["HTML", "CSS", "NodeJS", "MongoDB", "Gemini"],
+    "githubButton-3",
+    "https://github.com/deriljose/rems",
+    "1.95s",
+    "https://pc-builder-f9hw.onrender.com/"
+);
+
+project(
+    "project4",
+    "EcoSync",
+    "A platform to connect industries & promote circular economy principles.",
+    "libUsed-4",
+    ["HTML", "CSS", "NodeJS", "MySQL"],
+    "githubButton-4",
+    "https://github.com/deriljose/rems",
+    "2.3s",
+    "https://ecosync-jgwp.onrender.com/"
+);
+
+project(
+    "project5",
     "Data Analysis with Python (FreeCodeCamp)",
     "All the projects I did for the Data Analysis with Python course",
-    "libUsed-3",
+    "libUsed-5",
     ["Python", "NumPy", "Pandas", "Seaborn", "Matplotlib"],
-    "githubButton-3",
+    "githubButton-5",
     "https://github.com/deriljose/data_analysis_projects",
-    "2.25s"
+    "2.65s",
+    null
 );
 
 const projectTiles = document.querySelectorAll(".project_tiles");
@@ -141,18 +173,17 @@ function setDynamicMargin() {
                 let previousTileAbove = projectTiles2[index - 2];
                 let previousTileOtherAbove = projectTiles2[index - 1];
 
-                if (
-                    previousTileAbove.offsetHeight >
-                    previousTileOtherAbove.offsetHeight
-                ) {
+                const bottomYAbove =
+                    previousTileAbove.getBoundingClientRect().bottom +
+                    window.scrollY;
+                const bottomYOtherAbove =
+                    previousTileOtherAbove.getBoundingClientRect().bottom +
+                    window.scrollY;
+
+                if (bottomYAbove > bottomYOtherAbove) {
                     tile.style.marginTop = "3vw";
-                } else if (
-                    previousTileAbove.offsetHeight <
-                    previousTileOtherAbove.offsetHeight
-                ) {
-                    let heightDiff =
-                        getDistanceToBottom(previousTileOtherAbove) -
-                        getDistanceToBottom(previousTileAbove);
+                } else if (bottomYAbove < bottomYOtherAbove) {
+                    let heightDiff = bottomYOtherAbove - bottomYAbove;
                     let gap = (-heightDiff / window.innerWidth) * 100;
                     tile.style.marginTop = `${gap + 3}vw`;
                 }
@@ -160,18 +191,17 @@ function setDynamicMargin() {
                 let previousTileAbove = projectTiles2[index - 2];
                 let previousTileOtherAbove = projectTiles2[index - 3];
 
-                if (
-                    previousTileAbove.offsetHeight >
-                    previousTileOtherAbove.offsetHeight
-                ) {
+                const bottomYAbove =
+                    previousTileAbove.getBoundingClientRect().bottom +
+                    window.scrollY;
+                const bottomYOtherAbove =
+                    previousTileOtherAbove.getBoundingClientRect().bottom +
+                    window.scrollY;
+
+                if (bottomYAbove > bottomYOtherAbove) {
                     tile.style.marginTop = "3vw";
-                } else if (
-                    previousTileAbove.offsetHeight <
-                    previousTileOtherAbove.offsetHeight
-                ) {
-                    let heightDiff =
-                        getDistanceToBottom(previousTileOtherAbove) -
-                        getDistanceToBottom(previousTileAbove);
+                } else if (bottomYAbove < bottomYOtherAbove) {
+                    let heightDiff = bottomYOtherAbove - bottomYAbove;
                     let gap = (-heightDiff / window.innerWidth) * 100;
                     tile.style.marginTop = `${gap + 3}vw`;
                 }

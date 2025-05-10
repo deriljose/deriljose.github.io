@@ -43,6 +43,9 @@
     transform: rotateX(180deg);
     background: #434051;
     border-radius: 1vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #photo {
