@@ -66,6 +66,68 @@ function project(
     }
 }
 
+
+
+project(
+    "project-1",
+    "Rajagiri Event Management System (REMS)",
+    "A platform to manage events for students, teachers, and event organizers at Rajagiri.",
+    "libUsed-1",
+    ["HTML", "CSS", "Node.js", "MySQL"],
+    "githubButton-1",
+    "https://github.com/deriljose/rems",
+    "1.25s",
+    "https://rems-6pco.onrender.com/"
+);
+
+project(
+    "project-2",
+    "PC Builder",
+    "A website that recommends PC parts based on user requirements using Gemini.",
+    "libUsed-2",
+    ["HTML", "CSS", "Node.js", "MongoDB", "Gemini API"],
+    "githubButton-2",
+    "https://github.com/deriljose/pc_builder",
+    "1.6s",
+    "https://pc-builder-f9hw.onrender.com/"
+);
+
+project(
+    "project4",
+    "PSG Fan Website",
+    "A website that provides information about the club, players, and matches about the PSG Club.",
+    "libUsed-4",
+    ["React.js", "CSS", "Node.js", "MongoDB", "Express.js"],
+    "githubButton-4",
+    "https://github.com/deriljose/psg_website",
+    "1.95s",
+    "https://psg-website.onrender.com/"
+);
+
+project(
+    "project4",
+    "EcoSync",
+    "A platform to connect industries & promote circular economy principles.",
+    "libUsed-4",
+    ["HTML", "CSS", "Node.js", "MySQL"],
+    "githubButton-4",
+    "https://github.com/deriljose/ecosync",
+    "2.3s",
+    "https://ecosync-jgwp.onrender.com/"
+);
+
+project(
+    "project5",
+    "Diabetes AI",
+    "An AI model that predicts the likelihood of diabetes based on user input.",
+    "libUsed-4",
+    ["Python", "React.js","Uvicorn", "FastAPI", "Pandas", "NumPy"],
+    "githubButton-4",
+    "https://github.com/deriljose/diabetes_AI",
+    "2.65s",
+    null
+);
+
 project(
     "project1",
     "Portfolio Website",
@@ -74,57 +136,10 @@ project(
     ["HTML", "CSS", "Javascript"],
     "githubButton-1",
     "https://github.com/deriljose/portfolio-website-1",
-    "1.25s",
+    "3s",
     null
 );
 
-project(
-    "project2",
-    "Rajagiri Event Management System (REMS)",
-    "A platform to manage events for students, teachers, and event organizers at Rajagiri.",
-    "libUsed-2",
-    ["HTML", "CSS", "NodeJS", "MySQL"],
-    "githubButton-2",
-    "https://github.com/deriljose/rems",
-    "1.6s",
-    "https://rems-9u27.onrender.com/"
-);
-
-project(
-    "project3",
-    "PC Builder",
-    "A website that recommends PC parts based on user requirements using Gemini.",
-    "libUsed-3",
-    ["HTML", "CSS", "NodeJS", "MongoDB", "Gemini"],
-    "githubButton-3",
-    "https://github.com/deriljose/rems",
-    "1.95s",
-    "https://pc-builder-f9hw.onrender.com/"
-);
-
-project(
-    "project4",
-    "EcoSync",
-    "A platform to connect industries & promote circular economy principles.",
-    "libUsed-4",
-    ["HTML", "CSS", "NodeJS", "MySQL"],
-    "githubButton-4",
-    "https://github.com/deriljose/rems",
-    "2.3s",
-    "https://ecosync-jgwp.onrender.com/"
-);
-
-project(
-    "project5",
-    "Data Analysis with Python (FreeCodeCamp)",
-    "All the projects I did for the Data Analysis with Python course",
-    "libUsed-5",
-    ["Python", "NumPy", "Pandas", "Seaborn", "Matplotlib"],
-    "githubButton-5",
-    "https://github.com/deriljose/data_analysis_projects",
-    "2.65s",
-    null
-);
 
 const projectTiles = document.querySelectorAll(".project_tiles");
 
